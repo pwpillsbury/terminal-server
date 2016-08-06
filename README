@@ -1,0 +1,47 @@
+Introduction
+------------
+
+The Worth Data Cloud Server Demo is a web based system that that can control a network of Terminals.
+It runs completely on a web server.
+
+The Cloud Server is installed on a standard web server, easily available on a subscription basis
+from a website hosting provider.
+
+The Cloud Server requires a web server capable of handling PHP 5 and that has MySQL database 
+server installed. Most web hosting service providers include these features by default.
+
+Installing this system requires an operational knowledge of running web servers, MySQL (using 
+something like phpMyAdmin), and a basic understanding of CGI scripting (PHP in specific).
+ 
+
+
+
+The Cloud Server is composed of three parts:
+--------------------------------------------
+ 
+  1. The "cloud.php" script which is the web page that the 7802 Terminals connect with.
+  2. "index.html" which is the web page that human users can access collected data with.
+  3. A set of three tables ("proj_terminals", "proj_program", "proj_data") stored in the MySQL database of your choice.
+ 
+ Refer to the User's Manual for more details on the content and function of these scripts and tables.
+ 
+The Cloud Server is installed by:
+---------------------------------
+ 
+      -Copy the included PHP and INC files to a folder on your web hosting server (use your usual 
+      FTP client for this). These can be copied to the main folder of your website, or to a subfolder.
+      
+	  -Create an empty database or identify a previously existing one to contain the required tables.
+	  
+      -Edit the "varstermrouter.inc" file. 
+      Notice that "install.php" and "cloud.php" use the file "varstermrouter.inc". 
+      This file needs to be edited to contain the correct connection and password data for your database.
+      You may want to put it in a restricted access folder as a security measure (don't forget to change 
+      the "includes" in the other files if you do).  
+      
+      -Build the necessary MySQL database tables. 
+      Either run this installer by pointing your web browser to
+      http://www.myWebsite/myConnectionHostFolder/install.php
+      or use the included DDL (database definition log) file to build the tables manually using the 
+      software tools provided by your web hosting provider.
+ 

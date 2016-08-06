@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+<title>7802 WiFi Terminal Server</title><meta content="Peter Pillsbury" name="author"></head>
+<body>
+<form name="excelexportform"> <big><span style="font-weight: bold; text-decoration: underline; font-family: Helvetica,Arial,sans-serif;">Welcome
+to Worth Data's 7802 WiFi Terminal Demonstration and Testing Server</span></big><br>
+<br>
+This Server provides<br>
+<div style="margin-left: 40px;">1. A&nbsp;Connection
+Host for your applications using our ActiveX control running on your
+computer<br>
+2. A demonstration "Cloud" server that you can use to test your
+installation or as a template for building your own Server<br>
+3. This page that gives you access to downloading data collected using
+the demo Cloud Server<br>
+</div>
+<br>
+See the "RF 7802 Manual" for more information on using our Connection
+Host (or installing your own); the ActiveX control; and &nbsp;the
+Cloud Server (or installing your own).<br>
+<strong style="font-family: Helvetica,Arial,sans-serif;"></strong>
+<hr style="width: 100%; height: 2px;"><strong style="font-family: Helvetica,Arial,sans-serif;"><br>
+Cloud Server Data<br>
+<span style="font-weight: normal;">To use the Cloud
+Server, you must first configure your Terminal to have Internet access.
+Consult your manual to see how to do this.<br>
+<br>
+Once you have set up your Terminal, just sign-in with the default
+"Connection Host" settings and you will be using our Cloud Server. <br>
+Keep in mind that data is stored and accessed off the Server based on
+the "username", "server ID", "password" combination you have set in the
+Terminal.<br>
+If you want privacy, and to not see other users' demo data, change your
+username/serverID/password combination in yout Terminal and enter
+matching keys here to access your data.<br>
+</span><br>
+<br>
+Enter values that match your Terminal Setup to download data for Excel:</strong><span style="font-family: Helvetica,Arial,sans-serif;"> </span><br>
+<br>
+<div style="margin-left: 40px; background-color: rgb(204, 255, 255);"><span style="font-family: Helvetica,Arial,sans-serif;"> Enter
+Server ID:</span> <input name="serverid" value="" type="text"> <br>
+<br>
+<span style="font-family: Helvetica,Arial,sans-serif;">
+Enter Username:</span> <input name="username" value="" type="text"> <br>
+<br>
+<span style="font-family: Helvetica,Arial,sans-serif;">
+Enter Password:</span> <input name="password" value="" type="text"> <br>
+<br>
+<span style="font-family: Helvetica,Arial,sans-serif;">
+Delete data on Server after export: </span>
+<input size="4" style="font-family: Helvetica,Arial,sans-serif;" name="deleteafter" value="no"><span style="font-style: italic;">(Enter "yes" to delete all
+data that
+matches above keys)</span><br>
+</div>
+<br>
+<br>
+<input onclick="javascript:exportexcelFunction(this.form)" value="Export To Excel" type="button">
+<script language="javascript">
+function exportexcelFunction(form){
+var sid = form.serverid.value;
+var uname = form.username.value;
+var pswd = form.password.value;
+var delafter = form.deleteafter.value;
+var url = "export_excel.php" + "?sid=" + sid + "&user=" + uname + "&pswd=" + pswd + "&delafter=" + delafter; 
+//alert(url);
+// Opens the url in the same window
+window.open(url, "_new");
+//window.open(url, "_self");
+}
+</script></form>
+</body></html>
